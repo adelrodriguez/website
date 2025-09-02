@@ -1,0 +1,30 @@
+{
+  "extends": "@tooling/tsconfig/base",
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"],
+      "~~/*": ["./*"],
+      "~/content-collections": ["./src/.content-collections/generated"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "noEmit": true
+  },
+  "include": [
+    ".next/types/**/*.ts",
+    "global.d.ts",
+    "next-env.d.ts",
+    "next.config.ts",
+    "src",
+    "content",
+    "reset.d.ts",
+    "src/content-collections.ts"
+  ],
+  "exclude": ["node_modules"]
+}

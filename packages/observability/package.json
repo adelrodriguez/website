@@ -1,0 +1,44 @@
+{
+  "name": "@adel/observability",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./error/*": "./src/error/*.ts",
+    "./error/nextjs": "./src/error/nextjs/index.ts",
+    "./error/nextjs/*": "./src/error/nextjs/*.ts",
+    "./logger": "./src/logger/index.ts",
+    "./logger/*": "./src/logger/*.ts",
+    "./uptime": "./src/uptime.ts"
+  },
+  "scripts": {
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "deps:check": "taze -l",
+    "deps:update": "taze -lw",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@axiomhq/js": "1.3.1",
+    "@axiomhq/logging": "0.1.4",
+    "@axiomhq/nextjs": "0.1.4",
+    "@axiomhq/react": "0.1.4",
+    "@adel/env": "workspace:*",
+    "@adel/utils": "workspace:*",
+    "@openstatus/react": "^0.0.3",
+    "@sentry/browser": "10.5.0",
+    "@sentry/nextjs": "10.5.0",
+    "@sentry/node": "10.5.0",
+    "@sentry/react-native": "6.20.0",
+    "chalk": "5.6.0",
+    "http-status-codes": "2.3.0",
+    "next": "15.5.2",
+    "pino": "9.9.0",
+    "pino-pretty": "13.1.1",
+    "react": "19.1.0"
+  },
+  "devDependencies": {
+    "@tooling/tsconfig": "workspace:*",
+    "@types/react": "19.1.12",
+    "typescript": "5.9.2"
+  }
+}

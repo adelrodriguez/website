@@ -1,0 +1,16 @@
+{
+  "name": "@tooling/tsconfig",
+  "private": true,
+  "files": [
+    "*.json",
+    "reset.d.ts"
+  ],
+  "scripts": {
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "deps:check": "taze -l",
+    "deps:update": "taze -lw"
+  },
+  "devDependencies": {
+    "@total-typescript/ts-reset": "0.6.1"
+  }
+}

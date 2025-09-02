@@ -1,0 +1,31 @@
+{
+  "name": "@adel/internationalization",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./locale": "./src/locale.ts",
+    "./nextjs": "./src/nextjs/index.ts",
+    "./nextjs/*": "./src/nextjs/*.ts",
+    "./nextjs/types": "./src/nextjs/types.d.ts",
+    "./translations/*": "./translations/*.json"
+  },
+  "scripts": {
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "deps:check": "taze -l",
+    "deps:update": "taze -lw",
+    "translations:generate": "echo 'Not implemented yet'",
+    "translations:check": "i18n-check --source en --locales translations",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@adel/utils": "workspace:*",
+    "next-intl": "4.3.5"
+  },
+  "devDependencies": {
+    "@lingual/i18n-check": "0.8.6",
+    "@tooling/tsconfig": "workspace:*",
+    "next": "15.5.2",
+    "typescript": "5.9.2"
+  }
+}

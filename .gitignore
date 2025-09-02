@@ -1,0 +1,104 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Dependencies
+node_modules
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Environment variables
+!.env.template
+.env
+.env.*
+
+# Testing
+coverage
+
+# Turbo
+.turbo
+.cache
+
+# Vercel
+.vercel
+
+# Build Outputs
+.next
+out
+build
+dist
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Misc
+.DS_Store
+*.pem
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Wrangler
+.wrangler
+
+# Logs
+logs/
+*.log
+pnpm-debug.log*
+lerna-debug.log*
+
+# Docker
+.data
+
+# React Email
+*.react-email
+
+# Content Collections
+.content-collections
+
+# Template Sync
+.template-sync-tmp
+
+# i18n
+**/translations/*.d.json.ts
+
+# Mobile
+.expo
+
+# Extension App
+.wxt
+web-ext.config.ts
+.output
+stats.html
+stats-*.json
+
+# Desktop App
+dist-ssr
+*.local
+
+# Tauri (Rust)
+apps/desktop/src-tauri/target/
+apps/desktop/src-tauri/gen/schemas
+
+# Docs App
+.contentlayer
+.source
+
+# Mobile/React Native/Expo
+expo-env.d.ts
+
+# Editor directories and files (additional)
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

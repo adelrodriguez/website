@@ -1,0 +1,34 @@
+{
+  "name": "@adel/analytics",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./product/client": "./src/product/client.tsx",
+    "./product/expo": "./src/product/expo.ts",
+    "./product/nextjs": "./src/product/nextjs.ts",
+    "./product/server": "./src/product/server.ts",
+    "./web": "./src/web.ts"
+  },
+  "scripts": {
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "deps:check": "taze -l",
+    "deps:update": "taze -lw",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@adel/utils": "workspace:*",
+    "next": "15.5.2",
+    "next-plausible": "3.12.4",
+    "posthog-js": "1.260.1",
+    "posthog-node": "5.7.0",
+    "posthog-react-native": "4.4.0",
+    "react": "19.1.0",
+    "server-only": "0.0.1"
+  },
+  "devDependencies": {
+    "@tooling/tsconfig": "workspace:*",
+    "@types/react": "19.1.12",
+    "typescript": "5.9.2"
+  }
+}

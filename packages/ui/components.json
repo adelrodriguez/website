@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "aliases": {
+    "components": "@adel/ui/components",
+    "hooks": "@adel/ui/hooks",
+    "lib": "@adel/utils/ui",
+    "ui": "@adel/ui/components",
+    "utils": "@adel/utils/ui"
+  },
+  "rsc": true,
+  "style": "new-york",
+  "tailwind": {
+    "baseColor": "neutral",
+    "config": "",
+    "css": "src/styles/globals.css",
+    "cssVariables": true
+  },
+  "tsx": true
+}

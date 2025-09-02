@@ -1,0 +1,65 @@
+{
+  "name": "adel",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*",
+      "tooling/*"
+    ]
+  },
+  "scripts": {
+    "boundaries": "turbo boundaries",
+    "build": "turbo build",
+    "check": "adamantite check",
+    "clean": "turbo clean && git clean -xdf .cache .turbo dist node_modules",
+    "db:migrate": "turbo --filter @adel/db migrate",
+    "db:push": "turbo --filter @adel/db push",
+    "db:studio": "turbo --filter @adel/db studio",
+    "deps:check": "taze -rl",
+    "deps:update": "taze -rlw",
+    "dev": "turbo run dev",
+    "docker:down": "docker compose -f infra/local/docker-compose.yml down",
+    "docker:up": "docker compose -f infra/local/docker-compose.yml up -d",
+    "fix": "adamantite fix",
+    "fix:monorepo": "adamantite monorepo",
+    "generate": "turbo generate",
+    "scripts": "bun run scripts/index.ts",
+    "start": "turbo run start",
+    "template": "bun run scripts/index.ts template",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "typecheck": "turbo run typecheck --continue",
+    "typegen": "turbo run typegen --continue"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.2",
+    "@clack/prompts": "0.11.0",
+    "@commander-js/extra-typings": "14.0.0",
+    "@octokit/rest": "^22.0.0",
+    "@turbo/gen": "2.5.6",
+    "@types/bun": "1.2.20",
+    "adamantite": "0.8.0",
+    "commander": "14.0.0",
+    "sherif": "1.6.1",
+    "taze": "19.1.0",
+    "turbo": "2.5.6",
+    "typescript": "5.9.2"
+  },
+  "packageManager": "bun@1.2.19",
+  "engines": {
+    "node": ">=24"
+  },
+  "overrides": {
+    "import-in-the-middle": "1.14.2"
+  },
+  "trustedDependencies": [
+    "@parcel/watcher",
+    "@sentry/cli",
+    "@tailwindcss/oxide",
+    "@upstash/qstash-cli",
+    "docs",
+    "extension"
+  ]
+}
