@@ -4,11 +4,11 @@ import {
   type Locale,
   routing,
 } from "@adel/internationalization/nextjs"
-import { ThemeToggle } from "@adel/ui/components/theme"
 import {
   getTranslations,
   setRequestLocale,
-} from "@init/internationalization/nextjs/server"
+} from "@adel/internationalization/nextjs/server"
+import { ThemeToggle } from "@adel/ui/components/theme"
 import { notFound } from "next/navigation"
 import Document from "~/shared/components/document"
 import { LocaleToggle } from "~/shared/components/locale-toggle"

@@ -4,14 +4,14 @@ import {
   Link,
   usePathname,
   useTranslations,
-} from "@init/internationalization/nextjs"
-import { Button } from "@init/ui/components/button"
+} from "@adel/internationalization/nextjs"
+import { Button } from "@adel/ui/components/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@init/ui/components/dropdown-menu"
+} from "@adel/ui/components/dropdown-menu"
 import { LanguagesIcon } from "lucide-react"
 
 export function LocaleToggle() {
