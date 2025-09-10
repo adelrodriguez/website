@@ -8,19 +8,19 @@
     "clean": "git clean -xdf .cache .turbo .next dist node_modules",
     "deps:check": "taze -l",
     "deps:update": "taze -lw",
-    "dev": "next dev --turbopack --port 3006",
+    "dev": "next dev --turbopack --port 3000",
     "start": "next start",
     "typegen": "next typegen",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@content-collections/mdx": "0.2.2",
     "@adel/analytics": "workspace:*",
     "@adel/env": "workspace:*",
     "@adel/internationalization": "workspace:*",
     "@adel/observability": "workspace:*",
     "@adel/ui": "workspace:*",
     "@adel/utils": "workspace:*",
+    "@content-collections/mdx": "0.2.2",
     "client-only": "0.0.1",
     "import-in-the-middle": "1.14.2",
     "lucide-react": "0.542.0",
@@ -28,7 +28,8 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "require-in-the-middle": "7.5.2",
-    "server-only": "0.0.1"
+    "server-only": "0.0.1",
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {
     "@content-collections/cli": "0.1.6",

@@ -1,19 +1,60 @@
 {
-  "app": {
-    "dashboard": {
-      "home": {
-        "welcome": "Welcome back, {name}!"
+  "web": {
+    "metadata": {
+      "title": "Hello, I'm Adel!"
+    },
+    "home": {
+      "metadata": {
+        "title": "Hello, I'm Adel!",
+        "description": "Adel Rodriguez's personal website"
+      },
+      "title": "Hello, I'm Adel!",
+      "subtitle": [
+        "I'm a software engineer",
+        "I build stuff on the web",
+        "I'm from the Dominican Republic",
+        "Nice to meet you!"
+      ]
+    },
+    "about": {
+      "title": "About",
+      "p1": "I'm a software engineer based in Santo Domingo, Dominican Republic. Most of my experience has been on the web as a Fullstack Developer, with a bit of mobile and desktop.",
+      "p2": "I'm a tech nerd and tinkering with new things is my jam. I love to build simple and clean solutions to complex problems."
+    },
+    "tech": {
+      "title": "Tech",
+      "content": "Some of my favorite tech to build with:",
+      "tech": {
+        "astro": "The best for static sites",
+        "better-auth": "If I'm not rolling my own, I'm probably using this",
+        "bun": "Both as a package manager and a runtime",
+        "docker": "My go-to for local development and deploying certain apps",
+        "drizzle": "Almost as good as raw SQL",
+        "expo": "So many good modules",
+        "fumadocs": "Excellent for writing docs",
+        "hono": "🔥",
+        "nextjs": "My framework of choice when building web applications",
+        "postgres": "What can't Postgres do?",
+        "react-router": "Simple and clean routing, love it for routing inside browser extensions",
+        "react": "Remember componentDidMount?",
+        "redis": "For caching... and maybe everything else",
+        "sqlite": "Just spin up a local.db and you're good to go",
+        "tailwindcss": "Never going back to plain CSS",
+        "tanstack-query": "Specially when paired with TRPC",
+        "tanstack-router": "When you need a bit more type-safety than what React Router provides",
+        "trpc": "Full-stack type-safety? Hell yeah!",
+        "typescript": "Never going back to plain JavaScript",
+        "unistyles": "One of the best styling libraries for React Native",
+        "vite": "⭐",
+        "zod": "My favorite validation library"
       }
+    },
+    "misc": {
+      "go-home": "Go back home"
     }
   },
-  "web": {
-    "home": {
-      "title": "Home",
-      "description": "This is the home page of the project",
-      "locale": {
-        "en": "English",
-        "es": "Spanish"
-      }
-    }
+  "locale": {
+    "en": "English",
+    "es": "Spanish"
   }
 }
