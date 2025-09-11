@@ -61,33 +61,48 @@ export default function Page({ params }: PageProps<"/[locale]">) {
         </div>
       </div>
       <nav className="flex flex-col gap-2 font-light md:flex-row md:gap-6">
-        <div className="flex flex-row gap-6">
+        <ul className="flex flex-row gap-8">
           {links.map((link) => (
-            <Link
-              className="group inline-block text-xl md:text-2xl"
-              href={link.url}
-              key={link.name}
-            >
-              {link.name}
-              <span className="block h-px max-w-0 bg-foreground transition-all duration-300 group-hover:max-w-full" />
-            </Link>
+            <li key={link.name}>
+              <NavLink href={link.url} key={link.name} name={link.name} />
+            </li>
           ))}
-        </div>
-        <div className="flex flex-row gap-6">
+        </ul>
+        <ul className="flex flex-row gap-8">
           {socials.map((social) => (
-            <Link
-              className="group inline-block text-xl md:text-2xl"
-              href={social.url}
-              key={social.name}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              {social.name}
-              <span className="block h-px max-w-0 bg-foreground transition-all duration-300 group-hover:max-w-full" />
-            </Link>
+            <li key={social.name}>
+              <NavLink
+                external
+                href={social.url}
+                key={social.name}
+                name={social.name}
+              />
+            </li>
           ))}
-        </div>
+        </ul>
       </nav>
     </section>
+  )
+}
+
+function NavLink({
+  href,
+  name,
+  external = false,
+}: {
+  href: string
+  name: string
+  external?: boolean
+}) {
+  return (
+    <Link
+      className="group inline-block text-xl md:text-2xl"
+      href={href}
+      rel="noopener noreferrer"
+      target={external ? "_blank" : undefined}
+    >
+      {name}
+      <span className="block h-px max-w-0 bg-foreground transition-all duration-300 group-hover:max-w-full" />
+    </Link>
   )
 }
