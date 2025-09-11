@@ -1,9 +1,9 @@
 import type { Locale } from "@adel/internationalization/locale"
 import { cn } from "@adel/utils/ui"
-import { Inter } from "next/font/google"
+import { Funnel_Sans } from "next/font/google"
 import type { ReactNode } from "react"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const funnelSans = Funnel_Sans({ subsets: ["latin"], variable: "--font-sans" })
 
 export default function Document({
   children,
@@ -14,7 +14,7 @@ export default function Document({
 }) {
   return (
     <html className="h-full" lang={locale} suppressHydrationWarning>
-      <body className={cn("font-sans", inter.variable)}>{children}</body>
+      <body className={cn("font-sans", funnelSans.variable)}>{children}</body>
     </html>
   )
 }
