@@ -9,7 +9,12 @@
       "Soy un ingeniero de software",
       "Construyo cosas en la web",
       "Soy de la República Dominicana"
-    ]
+    ],
+    "links": {
+      "about": "acerca de",
+      "contact": "contacto",
+      "tech": "tecnología"
+    }
   },
   "about": {
     "title": "Acerca de",

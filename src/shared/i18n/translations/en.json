@@ -10,7 +10,12 @@
       "I build stuff on the web",
       "I'm from the Dominican Republic",
       "Nice to meet you!"
-    ]
+    ],
+    "links": {
+      "about": "about",
+      "contact": "contact",
+      "tech": "tech"
+    }
   },
   "about": {
     "title": "About",

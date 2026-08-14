@@ -1,7 +1,8 @@
 ---
-import { getTranslations, type Locale } from "../../i18n"
-import Layout from "../../layouts/layout.astro"
-import PageContainer from "../page-container.astro"
+import { getTranslations, type Locale } from "../../../shared/i18n"
+import Layout from "../../../shared/components/layout.astro"
+import PageContainer from "./page-container.astro"
+import { technologies } from "../technologies"
 
 interface Props {
   locale: Locale
@@ -9,30 +10,6 @@ interface Props {
 
 const { locale } = Astro.props
 const t = getTranslations(locale)
-
-const tech = [
-  { label: "astro", name: "Astro" },
-  { label: "better-auth", name: "Better Auth" },
-  { label: "bun", name: "Bun" },
-  { label: "docker", name: "Docker" },
-  { label: "drizzle", name: "Drizzle" },
-  { label: "expo", name: "Expo" },
-  { label: "fumadocs", name: "Fumadocs" },
-  { label: "hono", name: "Hono" },
-  { label: "nextjs", name: "Next.js" },
-  { label: "postgres", name: "Postgres" },
-  { label: "react-router", name: "React Router" },
-  { label: "react", name: "React" },
-  { label: "sqlite", name: "SQLite" },
-  { label: "tailwindcss", name: "Tailwind" },
-  { label: "tanstack-query", name: "TanStack Query" },
-  { label: "tanstack-router", name: "TanStack Router" },
-  { label: "trpc", name: "TRPC" },
-  { label: "typescript", name: "TypeScript" },
-  { label: "unistyles", name: "Unistyles" },
-  { label: "vite", name: "Vite" },
-  { label: "zod", name: "Zod" },
-] as const
 ---
 
 <Layout locale={locale} path="/tech">
@@ -43,7 +20,7 @@ const tech = [
         class="mb-16 flex flex-wrap items-center justify-center gap-4 font-light"
       >
         {
-          tech.map(({ name, label }) => (
+          technologies.map(({ name, label }) => (
             <li class="group relative">
               <span
                 aria-describedby={`tech-tooltip-${label}`}

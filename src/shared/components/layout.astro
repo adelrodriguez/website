@@ -3,8 +3,8 @@ import "@fontsource-variable/funnel-sans"
 import "../styles/global.css"
 
 import { ClientRouter } from "astro:transitions"
-import LocaleToggle from "../components/locale-toggle.astro"
-import ThemeToggle from "../components/theme-toggle.astro"
+import LocaleToggle from "./locale-toggle.astro"
+import ThemeToggle from "./theme-toggle.astro"
 import { getTranslations, type Locale } from "../i18n"
 
 interface Props {
@@ -48,7 +48,7 @@ const t = getTranslations(locale)
   </head>
   <body class="bg-background font-sans text-foreground">
     <div class="relative mx-auto flex min-h-screen max-w-4xl flex-col px-4">
-      <header class="absolute top-4 right-4 flex justify-end gap-2">
+      <header class="absolute top-4 right-4 z-10 flex justify-end gap-2">
         <ThemeToggle />
         <LocaleToggle locale={locale} path={path} />
       </header>
