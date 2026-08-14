@@ -1,29 +1,22 @@
 ---
 import { Image } from "astro:assets"
-import me from "../../../shared/assets/images/me.webp"
-import me2 from "../../../shared/assets/images/me-2.webp"
-import { getTranslations, type Locale } from "../../../shared/i18n"
-import Layout from "../../../shared/components/layout.astro"
+import me2 from "#shared/assets/images/me-2.webp"
+import me from "#shared/assets/images/me.webp"
+import Layout from "#shared/components/layout.astro"
+import { m } from "#shared/internationalization/messages.js"
 import PageContainer from "./page-container.astro"
-
-interface Props {
-  locale: Locale
-}
-
-const { locale } = Astro.props
-const t = getTranslations(locale)
 ---
 
-<Layout locale={locale} path="/about">
-  <PageContainer emoji="👋" locale={locale} title={t.about.title}>
+<Layout path="/about">
+  <PageContainer emoji="👋" title={m.about_title()}>
     <div
       class="mb-20 flex flex-col items-center justify-center gap-12 md:flex-row"
     >
       <div
         class="flex flex-col gap-4 font-light text-lg leading-relaxed md:mr-10 md:text-xl md:leading-loose"
       >
-        <p>{t.about.p1}</p>
-        <p>{t.about.p2}</p>
+        <p>{m.about_p1()}</p>
+        <p>{m.about_p2()}</p>
       </div>
 
       <div

@@ -1,12 +1,7 @@
 ---
-import { getTranslations, localePath, type Locale } from "../../../shared/i18n"
-
-interface Props {
-  locale: Locale
-}
-
-const { locale } = Astro.props
-const t = getTranslations(locale)
+import { localePath } from "#shared/i18n.ts"
+import { m } from "#shared/internationalization/messages.js"
+import { getLocale } from "#shared/internationalization/runtime.js"
 ---
 
 <div
@@ -27,8 +22,8 @@ const t = getTranslations(locale)
       stroke-linejoin="round"></path>
   </svg>
 
-  <a class="text-sm" href={localePath(locale, "/")}>
-    {t.misc["go-home"]}
+  <a class="text-sm" href={localePath(getLocale(), "/")}>
+    {m.misc_go_home()}
     <span
       class="block h-px max-w-0 bg-foreground transition-all duration-300 group-hover:max-w-full"
     ></span>
