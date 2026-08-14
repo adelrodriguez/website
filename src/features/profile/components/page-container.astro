@@ -1,5 +1,5 @@
 ---
-import CodeEmoji from "#shared/components/code-emoji.astro"
+import CodeTag from "#shared/components/code-tag.astro"
 import GoHome from "./go-home.astro"
 
 interface Props {
@@ -11,7 +11,7 @@ const { emoji, title } = Astro.props
 ---
 
 <section class="relative mb-40 flex w-full select-none flex-col text-left font-bold">
-  <CodeEmoji emoji={emoji} />
+  <CodeTag>{emoji}</CodeTag>
 
   <div class="mb-4 text-4xl leading-normal tracking-tight md:text-6xl">
     <h1 class="leading-relaxed" transition:name="section-title">{title}</h1>
