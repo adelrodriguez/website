@@ -17,13 +17,13 @@ import PageContainer from "./page-container.astro"
             <li class="group relative">
               <span
                 aria-describedby={`tech-tooltip-${label}`}
-                class="inline-block cursor-default px-5 py-2 transition-all duration-200 group-focus-within:rounded-full group-focus-within:bg-foreground group-focus-within:text-background group-hover:rounded-full group-hover:bg-foreground group-hover:text-background focus-visible:outline-none sm:text-lg"
+                class="inline-block cursor-default px-5 py-2 transition-[background-color,color,border-radius] duration-200 group-focus-within:rounded-full group-focus-within:bg-foreground group-focus-within:text-background group-hover:rounded-full group-hover:bg-foreground group-hover:text-background focus-visible:outline-none sm:text-lg"
                 tabindex="0"
               >
                 {name}
               </span>
               <span
-                class="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-max max-w-72 -translate-x-1/2 rounded-md bg-foreground px-3 py-1.5 text-center text-background text-lg opacity-0 transition-opacity duration-150 group-focus-within:opacity-100 group-hover:opacity-100"
+                class="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-max max-w-72 -translate-x-1/2 translate-y-1 scale-97 origin-bottom rounded-md bg-foreground px-3 py-1.5 text-center text-background text-lg opacity-0 transition-[opacity,translate,scale] duration-100 ease-out-strong motion-reduce:translate-y-0 motion-reduce:scale-100 group-focus-within:translate-y-0 group-focus-within:scale-100 group-focus-within:opacity-100 group-focus-within:duration-150 group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100 group-hover:delay-300 group-hover:duration-150"
                 id={`tech-tooltip-${label}`}
                 role="tooltip"
               >
