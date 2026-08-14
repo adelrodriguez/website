@@ -39,7 +39,12 @@ const pageBlur: TransitionDirectionalAnimations = {
 ---
 
 <!doctype html>
-<html class="h-full" lang={locale} transition:animate={pageBlur}>
+<html
+  class="h-full"
+  lang={locale}
+  transition:animate={pageBlur}
+  transition:name="page"
+>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
