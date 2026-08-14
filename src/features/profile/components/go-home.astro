@@ -1,0 +1,36 @@
+---
+import { getTranslations, localePath, type Locale } from "../../../shared/i18n"
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getTranslations(locale)
+---
+
+<div
+  class="group -bottom-10 absolute left-0 flex items-center font-light text-foreground/60 hover:text-foreground"
+>
+  <svg
+    class="mr-1 h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.5"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>Back home</title>
+    <path
+      d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+      stroke-linecap="round"
+      stroke-linejoin="round"></path>
+  </svg>
+
+  <a class="text-sm" href={localePath(locale, "/")}>
+    {t.misc["go-home"]}
+    <span
+      class="block h-px max-w-0 bg-foreground transition-all duration-300 group-hover:max-w-full"
+    ></span>
+  </a>
+</div>
