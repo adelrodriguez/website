@@ -14,12 +14,21 @@ const { strings } = Astro.props
   const instances: Typed[] = []
 
   function init() {
+    const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches
+
     for (const el of document.querySelectorAll<HTMLElement>("[data-typing]")) {
+      const strings: string[] = JSON.parse(el.dataset.strings ?? "[]")
+
+      if (reduceMotion) {
+        el.textContent = strings[0] ?? ""
+        continue
+      }
+
       instances.push(
         new Typed(el, {
           backSpeed: 50,
           loop: true,
-          strings: JSON.parse(el.dataset.strings ?? "[]"),
+          strings,
           typeSpeed: 40,
         })
       )

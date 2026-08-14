@@ -20,11 +20,11 @@ import PageContainer from "./page-container.astro"
       </div>
 
       <div
-        class="group relative mb-10 aspect-[9/10] w-64 flex-none rotate-2 overflow-hidden rounded-xl shadow-lg transition-all duration-700 ease-in-out will-change-transform hover:rotate-0 hover:scale-110 sm:w-72 sm:rounded-2xl md:m-0"
+        class="group relative mb-10 aspect-[9/10] w-64 flex-none rotate-2 overflow-hidden rounded-xl shadow-lg transition-transform duration-300 ease-out-strong will-change-transform hover:rotate-0 hover:scale-110 sm:w-72 sm:rounded-2xl md:m-0"
       >
         <Image
           alt="Adel"
-          class="absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-700 ease-in-out group-hover:opacity-0"
+          class="absolute inset-0 h-full w-full object-cover opacity-100 transition-[opacity,filter] duration-400 ease-out group-hover:opacity-0 group-hover:blur-[2px]"
           draggable="false"
           loading="eager"
           sizes="(min-width: 640px) 18rem, 16rem"
@@ -33,7 +33,7 @@ import PageContainer from "./page-container.astro"
         />
         <Image
           alt="Adel"
-          class="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100"
+          class="absolute inset-0 h-full w-full object-cover opacity-0 blur-[2px] transition-[opacity,filter] duration-400 ease-out group-hover:opacity-100 group-hover:blur-none"
           draggable="false"
           loading="eager"
           sizes="(min-width: 640px) 18rem, 16rem"
