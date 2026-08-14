@@ -1,5 +1,7 @@
 ---
-import CodeEmoji from "#shared/components/code-emoji.astro"
+import { Image } from "astro:assets"
+import meStyled from "#shared/assets/images/me-styled.webp"
+import CodeTag from "#shared/components/code-tag.astro"
 import Layout from "#shared/components/layout.astro"
 import NavLink from "#shared/components/nav-link.astro"
 import TypingAnimation from "#shared/components/typing-animation.astro"
@@ -30,7 +32,17 @@ const subtitles = [
 
 <Layout path="/">
   <section class="flex w-full select-none flex-col text-left font-bold">
-    <CodeEmoji emoji="🧔🏻‍♂️" />
+    <CodeTag>
+      <Image
+        alt="Adel"
+        class="size-8 rounded-full md:size-12"
+        draggable="false"
+        loading="eager"
+        sizes="(min-width: 768px) 3rem, 2rem"
+        src={meStyled}
+        widths={[32, 48, 96]}
+      />
+    </CodeTag>
 
     <div class="mb-4 text-4xl leading-normal tracking-tight md:text-6xl">
       <h1 class="leading-relaxed" transition:name="section-title">
