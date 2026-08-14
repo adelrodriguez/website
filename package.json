@@ -15,6 +15,7 @@
     "dev": "astro dev",
     "fix": "adamantite fix",
     "format": "adamantite format",
+    "prepare": "bun run codegen:i18n",
     "preview": "astro preview",
     "start": "astro dev"
   },
