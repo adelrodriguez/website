@@ -2,6 +2,7 @@
 import "@fontsource-variable/funnel-sans"
 import "#shared/styles/global.css"
 
+import type { TransitionAnimationPair, TransitionDirectionalAnimations } from "astro"
 import { ClientRouter } from "astro:transitions"
 import { m } from "#shared/internationalization/messages.js"
 import { getLocale } from "#shared/internationalization/runtime.js"
@@ -15,10 +16,35 @@ interface Props {
 
 const { path } = Astro.props
 const locale = getLocale()
+
+const blurFade: TransitionAnimationPair = {
+  new: {
+    duration: "250ms",
+    easing: "cubic-bezier(0.23, 1, 0.32, 1)",
+    fillMode: "both",
+    name: "page-blur-in",
+  },
+  old: {
+    duration: "250ms",
+    easing: "cubic-bezier(0.23, 1, 0.32, 1)",
+    fillMode: "both",
+    name: "page-blur-out",
+  },
+}
+
+const pageBlur: TransitionDirectionalAnimations = {
+  backwards: blurFade,
+  forwards: blurFade,
+}
 ---
 
 <!doctype html>
-<html class="h-full" lang={locale}>
+<html
+  class="h-full"
+  lang={locale}
+  transition:animate={pageBlur}
+  transition:name="page"
+>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
