@@ -45,11 +45,16 @@ const tech = [
         {
           tech.map(({ name, label }) => (
             <li class="group relative">
-              <span class="inline-block cursor-default px-5 py-2 transition-all duration-200 group-hover:rounded-full group-hover:bg-foreground group-hover:text-background sm:text-lg">
+              <span
+                aria-describedby={`tech-tooltip-${label}`}
+                class="inline-block cursor-default px-5 py-2 transition-all duration-200 group-focus-within:rounded-full group-focus-within:bg-foreground group-focus-within:text-background group-hover:rounded-full group-hover:bg-foreground group-hover:text-background focus-visible:outline-none sm:text-lg"
+                tabindex="0"
+              >
                 {name}
               </span>
               <span
-                class="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-max max-w-72 -translate-x-1/2 rounded-md bg-foreground px-3 py-1.5 text-center text-background text-lg opacity-0 transition-opacity duration-150 group-hover:opacity-100"
+                class="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-max max-w-72 -translate-x-1/2 rounded-md bg-foreground px-3 py-1.5 text-center text-background text-lg opacity-0 transition-opacity duration-150 group-focus-within:opacity-100 group-hover:opacity-100"
+                id={`tech-tooltip-${label}`}
                 role="tooltip"
               >
                 {t.tech.tech[label]}
