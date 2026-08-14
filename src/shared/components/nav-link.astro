@@ -1,0 +1,21 @@
+---
+interface Props {
+  external?: boolean
+  href: string
+  name: string
+}
+
+const { external = false, href, name } = Astro.props
+---
+
+<a
+  class="group inline-block text-xl md:text-2xl"
+  href={href}
+  rel="noopener noreferrer"
+  target={external ? "_blank" : undefined}
+>
+  {name}
+  <span
+    class="block h-px max-w-0 bg-foreground transition-all duration-300 group-hover:max-w-full"
+  ></span>
+</a>

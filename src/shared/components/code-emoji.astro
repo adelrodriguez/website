@@ -1,0 +1,11 @@
+---
+interface Props {
+  emoji: string
+}
+
+const { emoji } = Astro.props
+---
+
+<span class="text-3xl md:text-5xl" transition:name="code-emoji"
+  >{`<${emoji}/>`}</span
+>
