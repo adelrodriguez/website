@@ -1,3 +1,0 @@
-# Bot workflow files may be validated byte-for-byte against the default
-# branch, so keep the formatter away from them.
-.github/workflows/pullfrog.yml
