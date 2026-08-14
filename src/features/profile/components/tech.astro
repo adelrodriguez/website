@@ -1,26 +1,19 @@
 ---
-import { getTranslations, type Locale } from "../../../shared/i18n"
-import Layout from "../../../shared/components/layout.astro"
-import PageContainer from "./page-container.astro"
+import Layout from "#shared/components/layout.astro"
+import { m } from "#shared/internationalization/messages.js"
 import { technologies } from "../technologies"
-
-interface Props {
-  locale: Locale
-}
-
-const { locale } = Astro.props
-const t = getTranslations(locale)
+import PageContainer from "./page-container.astro"
 ---
 
-<Layout locale={locale} path="/tech">
-  <PageContainer emoji="💻" locale={locale} title={t.tech.title}>
+<Layout path="/tech">
+  <PageContainer emoji="💻" title={m.tech_title()}>
     <div class="flex flex-col justify-center gap-12">
-      <p class="text-left font-light text-lg md:text-xl">{t.tech.content}</p>
+      <p class="text-left font-light text-lg md:text-xl">{m.tech_content()}</p>
       <ul
         class="mb-16 flex flex-wrap items-center justify-center gap-4 font-light"
       >
         {
-          technologies.map(({ name, label }) => (
+          technologies.map(({ description, label, name }) => (
             <li class="group relative">
               <span
                 aria-describedby={`tech-tooltip-${label}`}
@@ -34,7 +27,7 @@ const t = getTranslations(locale)
                 id={`tech-tooltip-${label}`}
                 role="tooltip"
               >
-                {t.tech.tech[label]}
+                {description()}
               </span>
             </li>
           ))

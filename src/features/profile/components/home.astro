@@ -1,41 +1,44 @@
 ---
-import CodeEmoji from "../../../shared/components/code-emoji.astro"
-import NavLink from "../../../shared/components/nav-link.astro"
-import TypingAnimation from "../../../shared/components/typing-animation.astro"
-import Layout from "../../../shared/components/layout.astro"
-import { getTranslations, localePath, type Locale } from "../../../shared/i18n"
+import CodeEmoji from "#shared/components/code-emoji.astro"
+import Layout from "#shared/components/layout.astro"
+import NavLink from "#shared/components/nav-link.astro"
+import TypingAnimation from "#shared/components/typing-animation.astro"
+import { localePath } from "#shared/i18n.ts"
+import { m } from "#shared/internationalization/messages.js"
+import { getLocale } from "#shared/internationalization/runtime.js"
 
-interface Props {
-  locale: Locale
-}
-
-const { locale } = Astro.props
-const t = getTranslations(locale)
+const locale = getLocale()
 
 const links = [
-  { key: "about", url: localePath(locale, "/about") },
-  { key: "tech", url: localePath(locale, "/tech") },
-  { key: "contact", url: "mailto:hey@adel.do" },
-] as const
+  { label: m.home_link_about(), url: localePath(locale, "/about") },
+  { label: m.home_link_tech(), url: localePath(locale, "/tech") },
+  { label: m.home_link_contact(), url: "mailto:hey@adel.do" },
+]
 
 const socials = [
   { name: "github", url: "https://github.com/adelrodriguez" },
   { name: "linkedin", url: "https://www.linkedin.com/in/adelrodriguez/" },
   { name: "x", url: "https://x.com/adeldotdo" },
 ]
+
+const subtitles = [
+  m.home_subtitle_first(),
+  m.home_subtitle_second(),
+  m.home_subtitle_third(),
+]
 ---
 
-<Layout locale={locale} path="/">
+<Layout path="/">
   <section class="flex w-full select-none flex-col text-left font-bold">
     <CodeEmoji emoji="🧔🏻‍♂️" />
 
     <div class="mb-4 text-4xl leading-normal tracking-tight md:text-6xl">
       <h1 class="leading-relaxed" transition:name="section-title">
-        {t.home.title}
+        {m.home_title()}
       </h1>
       <div class="h-28 md:h-42">
         <h2 class="h-auto">
-          <TypingAnimation strings={t.home.subtitle.slice(0, 3)} />
+          <TypingAnimation strings={subtitles} />
         </h2>
       </div>
     </div>
@@ -44,7 +47,7 @@ const socials = [
         {
           links.map((link) => (
             <li>
-              <NavLink href={link.url} name={t.home.links[link.key]} />
+              <NavLink href={link.url} name={link.label} />
             </li>
           ))
         }

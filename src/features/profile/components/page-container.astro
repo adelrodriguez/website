@@ -1,15 +1,13 @@
 ---
-import type { Locale } from "../../../shared/i18n"
-import CodeEmoji from "../../../shared/components/code-emoji.astro"
+import CodeEmoji from "#shared/components/code-emoji.astro"
 import GoHome from "./go-home.astro"
 
 interface Props {
   emoji: string
-  locale: Locale
   title: string
 }
 
-const { emoji, locale, title } = Astro.props
+const { emoji, title } = Astro.props
 ---
 
 <section class="relative mb-40 flex w-full select-none flex-col text-left font-bold">
@@ -19,5 +17,5 @@ const { emoji, locale, title } = Astro.props
     <h1 class="leading-relaxed" transition:name="section-title">{title}</h1>
   </div>
   <slot />
-  <GoHome locale={locale} />
+  <GoHome />
 </section>

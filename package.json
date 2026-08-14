@@ -3,14 +3,19 @@
   "version": "0.0.1",
   "private": true,
   "type": "module",
+  "imports": {
+    "#*": "./src/*"
+  },
   "scripts": {
     "analyze": "adamantite analyze",
     "astro": "astro",
     "build": "astro build",
     "check": "adamantite check",
+    "codegen:i18n": "paraglide-js compile --project ./tooling/internationalization/project.inlang --outdir ./src/shared/internationalization",
     "dev": "astro dev",
     "fix": "adamantite fix",
     "format": "adamantite format",
+    "prepare": "bun run codegen:i18n",
     "preview": "astro preview",
     "start": "astro dev"
   },
@@ -22,6 +27,7 @@
     "typed.js": "^2.1.0"
   },
   "devDependencies": {
+    "@inlang/paraglide-js": "^2.23.2",
     "adamantite": "^0.35.0",
     "knip": "6.32.2",
     "oxfmt": "0.63.0",
