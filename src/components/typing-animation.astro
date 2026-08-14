@@ -1,0 +1,35 @@
+---
+interface Props {
+  strings: string[]
+}
+
+const { strings } = Astro.props
+---
+
+<span data-strings={JSON.stringify(strings)} data-typing></span>
+
+<script>
+  import Typed from "typed.js"
+
+  const instances: Typed[] = []
+
+  function init() {
+    for (const el of document.querySelectorAll<HTMLElement>("[data-typing]")) {
+      instances.push(
+        new Typed(el, {
+          backSpeed: 50,
+          loop: true,
+          strings: JSON.parse(el.dataset.strings ?? "[]"),
+          typeSpeed: 40,
+        })
+      )
+    }
+  }
+
+  document.addEventListener("astro:page-load", init)
+  document.addEventListener("astro:before-swap", () => {
+    while (instances.length > 0) {
+      instances.pop()?.destroy()
+    }
+  })
+</script>

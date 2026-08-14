@@ -1,0 +1,63 @@
+---
+import CodeEmoji from "../code-emoji.astro"
+import NavLink from "../nav-link.astro"
+import TypingAnimation from "../typing-animation.astro"
+import Layout from "../../layouts/layout.astro"
+import { getTranslations, localePath, type Locale } from "../../i18n"
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getTranslations(locale)
+
+const links = [
+  { name: "about", url: localePath(locale, "/about") },
+  { name: "tech", url: localePath(locale, "/tech") },
+  { name: "contact", url: "mailto:hey@adel.do" },
+]
+
+const socials = [
+  { name: "github", url: "https://github.com/adelrodriguez" },
+  { name: "linkedin", url: "https://www.linkedin.com/in/adelrodriguez/" },
+  { name: "x", url: "https://x.com/adeldotdo" },
+]
+---
+
+<Layout locale={locale} path="/">
+  <section class="flex w-full select-none flex-col text-left font-bold">
+    <CodeEmoji emoji="🧔🏻‍♂️" />
+
+    <div class="mb-4 text-4xl leading-normal tracking-tight md:text-6xl">
+      <h1 class="leading-relaxed" transition:name="section-title">
+        {t.home.title}
+      </h1>
+      <div class="h-28 md:h-42">
+        <h2 class="h-auto">
+          <TypingAnimation strings={t.home.subtitle.slice(0, 3)} />
+        </h2>
+      </div>
+    </div>
+    <nav class="flex flex-col gap-2 font-light md:flex-row md:gap-6">
+      <ul class="flex flex-row gap-8">
+        {
+          links.map((link) => (
+            <li>
+              <NavLink href={link.url} name={link.name} />
+            </li>
+          ))
+        }
+      </ul>
+      <ul class="flex flex-row gap-8">
+        {
+          socials.map((social) => (
+            <li>
+              <NavLink external href={social.url} name={social.name} />
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </section>
+</Layout>
