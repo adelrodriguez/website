@@ -1,4 +1,3 @@
-# The Claude GitHub app requires these workflow files to be byte-identical to
-# the versions on the default branch, so keep the formatter away from them.
-.github/workflows/claude.yml
-.github/workflows/claude-code-review.yml
+# Bot workflow files may be validated byte-for-byte against the default
+# branch, so keep the formatter away from them.
+.github/workflows/pullfrog.yml
