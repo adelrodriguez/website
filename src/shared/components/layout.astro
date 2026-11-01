@@ -52,7 +52,11 @@ const pageBlur: TransitionDirectionalAnimations = {
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <meta name="generator" content={Astro.generator} />
     <title>{m.metadata_title()}</title>
-    <script defer data-domain="adel.do" src="https://plausible.io/js/script.js"
+    <script
+      is:inline
+      defer
+      src="https://analytics.adel.do/script.js"
+      data-website-id="560fd3f6-db85-400b-8e42-0cc60205abe1"
     ></script>
     <ClientRouter />
     <script is:inline>
